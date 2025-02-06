@@ -15,7 +15,7 @@ cd cloudstack-terraform-example
 ```
 
 ### Configure CloudStack credentials
-Edit main.tf and replace "<YOUR-CLOUDSTACK-ADDRESS_AND_PORT>", "<YOUR-CLOUDSTACK-API-KEY>", and "<YOUR-CLOUDSTACK-SECRET-KEY>" with your actual values:
+Edit main.tf and replace **YOUR-CLOUDSTACK-ADDRESS_AND_PORT**, **YOUR-CLOUDSTACK-API-KEY**, and **YOUR-CLOUDSTACK-SECRET-KEY** with your actual values:
 ```hcl
 variable "api_url" {
   default = "<YOUR-CLOUDSTACK-ADDRESS_AND_PORT>/client/api"
