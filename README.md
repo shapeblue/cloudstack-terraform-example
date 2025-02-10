@@ -23,6 +23,7 @@ api_key            = "<YOUR-CLOUDSTACK-API-KEY>"
 secret_key         = "<YOUR-CLOUDSTACK-SECRET-KEY>"
 
 # General Configuration
+# Zone Var
 zone               = "<CLOUDSTACK-ZONE>"
 ```
 Other variables are already pre-configured in the terraform.tfvars file with default values. If needed, you can update them to fit your requirements.
