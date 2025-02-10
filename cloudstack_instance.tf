@@ -1,14 +1,16 @@
-data "http" "remote_userdata" {
-  url = "https://raw.githubusercontent.com/shapeblue/assets/main/userdata-script"
-}
-
 resource "cloudstack_instance" "instances" {
-  for_each         = toset(var.instance_names)
+  for_each         = toset(var.instances_list)
   name             = each.value
-  service_offering = "Small Instance"
+  service_offering = var.service_offering
   template         = cloudstack_template.template1.id
   network_id       = cloudstack_network.isolated_net.id
-  zone             = "London-Zone"
+  zone             = var.zone
   expunge          = true
-  user_data        = data.http.remote_userdata.response_body
+
+  # Update user_data to use response_body
+  user_data        = data.http.userdata.response_body
+}
+
+data "http" "userdata" {
+  url = var.userdata_url
 }
